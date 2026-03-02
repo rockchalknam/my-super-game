@@ -1,26 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Super Mario World</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Mario World | Arcade</title>
     <style>
-        body { 
-            margin: 0; 
-            background: #000; 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            height: 100vh; 
-            overflow: hidden;
+        /* This makes the background black and centers the game perfectly */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000; /* Pure black background */
+            overflow: hidden; /* No scrollbars */
         }
-        iframe { 
-            width: 800px; 
-            height: 600px; 
-            border: 5px solid #333; 
-            border-radius: 10px;
+
+        /* Styling the game box */
+        .game-wrapper {
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+            border: 2px solid #333;
+            line-height: 0;
+        }
+
+        iframe {
+            width: 800px;
+            height: 600px;
+            border: none;
         }
     </style>
 </head>
 <body>
-    <iframe src="https://classicjoy.games/embed?slug=super-mario-world" allowfullscreen></iframe>
+
+    <div class="game-wrapper">
+        <iframe 
+            src="https://classicjoy.games/embed?slug=super-mario-world" 
+            allowfullscreen 
+            sandbox="allow-scripts allow-same-origin allow-pointer-lock"
+            title="Super Mario World">
+        </iframe>
+    </div>
+
 </body>
 </html>
