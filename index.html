@@ -3,35 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Super Mario World | Ad-Free</title>
+    <title>Super Mario World | Arcade</title>
     <style>
-        body, html { 
-            margin: 0; padding: 0; width: 100%; height: 100%; 
-            background: #000; overflow: hidden; 
-            display: flex; justify-content: center; align-items: center; 
+        /* This makes the background black and centers the game perfectly */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000; /* Pure black background */
+            overflow: hidden; /* No scrollbars */
         }
-        #game { width: 800px; height: 600px; }
+
+        /* Styling the game box */
+        .game-wrapper {
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+            border: 2px solid #333;
+            line-height: 0;
+        }
+
+        iframe {
+            width: 800px;
+            height: 600px;
+            border: none;
+        }
     </style>
 </head>
 <body>
 
-    <div id="game"></div>
-
-    <script>
-        // Configuration for the ad-free emulator
-        EJS_player = '#game';
-        EJS_core = 'snes'; 
-        EJS_gameName = "Super Mario World";
-        EJS_color = '#ff0000';
-        EJS_startOnLoaded = true;
-        
-        // Corrected path to emulator data
-        EJS_pathtodata = 'https://www.emulatorjs.com/loader/';
-        
-        // Link to the game file (ROM)
-        EJS_gameUrl = 'https://cdn.statically.io/gh/Abishek-Santhosh/Mario-Games/main/Super%20Mario%20World%20(USA).sfc'; 
-    </script>
-    <script src="https://www.emulatorjs.com/loader/loader.js"></script>
+    <div class="game-wrapper">
+        <iframe 
+            src="https://classicjoy.games/embed?slug=super-mario-world" 
+            allowfullscreen 
+            sandbox="allow-scripts allow-same-origin allow-pointer-lock"
+            title="Super Mario World">
+        </iframe>
+    </div>
 
 </body>
 </html>
