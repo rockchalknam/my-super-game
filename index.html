@@ -1,47 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Super Mario World | Arcade</title>
+    <title>Super Mario World | My Arcade</title>
     <style>
-        /* This makes the background black and centers the game perfectly */
-        body, html {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #000; /* Pure black background */
-            overflow: hidden; /* No scrollbars */
-        }
-
-        /* Styling the game box */
-        .game-wrapper {
-            box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
-            border: 2px solid #333;
-            line-height: 0;
-        }
-
-        iframe {
-            width: 800px;
-            height: 600px;
-            border: none;
-        }
+        body, html { margin: 0; padding: 0; width: 100%; height: 100%; background: #000; overflow: hidden; display: flex; justify-content: center; align-items: center; }
+        #game { width: 800px; height: 600px; }
     </style>
 </head>
 <body>
 
-    <div class="game-wrapper">
-        <iframe 
-            src="https://classicjoy.games/embed?slug=super-mario-world" 
-            allowfullscreen 
-            sandbox="allow-scripts allow-same-origin allow-pointer-lock"
-            title="Super Mario World">
-        </iframe>
-    </div>
+    <div id="game"></div>
+
+    <script>
+        // This connects to a clean, ad-free emulator
+        EJS_player = '#game';
+        EJS_core = 'snes'; // Super Nintendo
+        EJS_gameName = "Super Mario World";
+        EJS_color = '#0064ff';
+        EJS_startOnLoaded = true;
+        
+        // This is the link to a public, ad-free version of the game file
+        EJS_gameUrl = 'https://cdn.statically.io/gh/Abishek-Santhosh/Mario-Games/main/Super%20Mario%20World%20(USA).sfc'; 
+        
+        EJS_pathtodata = 'https://www.emulatorjs.com/loader/';
+    </script>
+    <script src="https://www.emulatorjs.com/loader/loader.js"></script>
 
 </body>
 </html>
